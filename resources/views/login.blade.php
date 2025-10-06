@@ -12,7 +12,7 @@
 
 		<link rel="stylesheet" href="{{ Admin::asset("open-admin/css/styles.css")}}">
 
-		@foreach(Admin::css() ?? [] as $cssFile)
+		@foreach(Admin::cssForLogin() ?? [] as $cssFile)
 			<link rel="stylesheet" href="{{ $cssFile }}">
 		@endforeach
 

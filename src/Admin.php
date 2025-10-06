@@ -433,7 +433,7 @@ class Admin
         return '<script>var admin_lang_arr = '.$lang_array.'</script>';
     }
 
-    public static function css($file = null)
+    public static function cssForLogin($file = null)
     {
         if ($file) {
             // Accept either a single file (string) or an array of files.
