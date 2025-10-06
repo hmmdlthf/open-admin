@@ -12,11 +12,9 @@
 
 		<link rel="stylesheet" href="{{ Admin::asset("open-admin/css/styles.css")}}">
 
-		@if(!is_null($cssFiles = Admin::css()))
-			@foreach($cssFiles as $cssFile)
-				<link rel="stylesheet" href="{{$cssFile}}">
-			@endforeach
-		@endif
+		@foreach(Admin::css() ?? [] as $cssFile)
+			<link rel="stylesheet" href="{{ $cssFile }}">
+		@endforeach
 
 		<script src="{{ Admin::asset("bootstrap5/bootstrap.bundle.min.js")}}"></script>
 

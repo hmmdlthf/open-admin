@@ -436,7 +436,14 @@ class Admin
     public static function css($file = null)
     {
         if ($file) {
-            self::$cssFiles[] = $file;
+            // Accept either a single file (string) or an array of files.
+            if (is_array($file)) {
+                foreach ($file as $f) {
+                    self::$cssFiles[] = $f;
+                }
+            } else {
+                self::$cssFiles[] = $file;
+            }
         }
 
         return self::$cssFiles;
