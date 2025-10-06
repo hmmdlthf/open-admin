@@ -50,6 +50,11 @@ class Admin
     /**
      * @var array
      */
+    public static $cssFiles = [];
+
+    /**
+     * @var array
+     */
     public static $extensions = [];
 
     /**
@@ -426,5 +431,22 @@ class Admin
         $lang_array = json_encode(__('admin'));
 
         return '<script>var admin_lang_arr = '.$lang_array.'</script>';
+    }
+
+    public static function css($file)
+    {
+        if (is_array($file)) {
+            foreach ($file as $f) {
+                self::css($f);
+            }
+
+            return;
+        }
+
+        if (in_array($file, self::$cssFiles)) {
+            return;
+        }
+
+        self::$cssFiles[] = $file;
     }
 }
