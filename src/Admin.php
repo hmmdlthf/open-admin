@@ -433,20 +433,12 @@ class Admin
         return '<script>var admin_lang_arr = '.$lang_array.'</script>';
     }
 
-    public static function css($file)
+    public static function css($file = null)
     {
-        if (is_array($file)) {
-            foreach ($file as $f) {
-                self::css($f);
-            }
-
-            return;
+        if ($file) {
+            self::$cssFiles[] = $file;
         }
 
-        if (in_array($file, self::$cssFiles)) {
-            return;
-        }
-
-        self::$cssFiles[] = $file;
+        return self::$cssFiles;
     }
 }
