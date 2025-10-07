@@ -323,6 +323,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Login page background overlay quote
+    |--------------------------------------------------------------------------
+    |
+    | This value is used to set the background overlay quote of login page.
+    |
+    */
+    'login_background_overlay_quote' => 'Your quote here',
+
+    /*
+    |--------------------------------------------------------------------------
     | Show version at footer
     |--------------------------------------------------------------------------
     |

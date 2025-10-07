@@ -22,8 +22,24 @@
 	<body class="bg-light {{ config('admin.skin') ?? '' }}">
 		@if(config('admin.login_layout') === 'login-split-screen')
 			<div class="row g-0 vh-100">
-				<div class="col-md-6 d-none d-md-block" style="background: url({{ config('admin.login_background_image') ?: Admin::asset('open-admin/img/login-left.jpg') }}) center/cover no-repeat;">
+				<div class="col-md-6 d-none d-md-block position-relative" style="background: url({{ config('admin.login_background_image') ?: Admin::asset('open-admin/img/login-left.jpg') }}) center/cover no-repeat;">
 					{{-- left visual / illustration --}}
+					@if(config('admin.login_background_overlay_quote'))
+						<div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.35);">
+							<figure class="text-white text-center px-3" style="max-width:760px;">
+								<div class="p-4 p-md-5 rounded-3 mx-2" style="background: rgba(0,0,0,0.55); box-shadow: 0 10px 30px rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
+									<blockquote class="blockquote fs-4 fst-italic mb-2" style="max-width: 35ch; border-left:4px solid rgba(255,255,255,0.18); padding-left:1rem; color:#fff; text-shadow: 0 4px 12px rgba(0,0,0,0.6);">
+										&ldquo;{{ config('admin.login_background_overlay_quote') }}&rdquo;
+									</blockquote>
+									@if(config('admin.login_background_overlay_credit'))
+										<figcaption class="blockquote-footer text-white-50 mt-2">{{ config('admin.login_background_overlay_credit') }}</figcaption>
+									@else
+										<figcaption class="blockquote-footer text-white-50 mt-2">&mdash; {{ config('admin.name') }}</figcaption>
+									@endif
+								</div>
+							</figure>
+						</div>
+					@endif
 				</div>
 				<div class="col-md-6 d-flex align-items-center justify-content-center">
 					<div class="container m-4" style="max-width:400px;">
