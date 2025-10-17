@@ -5,10 +5,12 @@ namespace OpenAdmin\Admin\Auth\Database;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use OpenAdmin\Admin\Traits\DefaultDatetimeFormat;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Role extends Model
 {
     use DefaultDatetimeFormat;
+    use SoftDeletes;
 
     protected $fillable = ['name', 'slug'];
 

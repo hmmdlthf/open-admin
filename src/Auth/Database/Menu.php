@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;
 use OpenAdmin\Admin\Traits\DefaultDatetimeFormat;
 use OpenAdmin\Admin\Traits\ModelTree;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Menu.
@@ -21,6 +22,7 @@ class Menu extends Model
     use ModelTree {
         ModelTree::boot as treeBoot;
     }
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
