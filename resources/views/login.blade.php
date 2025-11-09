@@ -117,7 +117,7 @@
 							<div class="text-center small text-muted mt-4 mb-3">
 								&copy; {{ date('Y') }} {{ config('admin.name') ?: config('app.name') }}. All rights reserved.
 								@if(config('admin.show_version', true))
-									&nbsp;<br>Powered by <a href="https://caaqit.com" target="_blank" rel="noopener noreferrer">CAAQIT (PVT) LTD.</a>
+									&nbsp;<br>Powered by {{ config('admin.copyright_company') }}
 								@endif
 							</div>
 						</div>

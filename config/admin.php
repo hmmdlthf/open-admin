@@ -36,6 +36,17 @@ return [
     */
     'logo-mini' => '<b>OA</b>',
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Open-admin copyright
+    |--------------------------------------------------------------------------
+    |
+    | Copyright information displayed in the admin panel footer.
+    |
+    */
+    'copyright_company' => '<a href="https://yourcompany.com" target="_blank" rel="noopener noreferrer">Your Company Name.</a>',
+
     /*
     |--------------------------------------------------------------------------
     | Open-admin bootstrap setting
